@@ -1,13 +1,14 @@
 ﻿using Assignment_1;
 using System.ComponentModel;
+//using System.Drawing;
 
 //Question  1:
 /*Sum sum1 = new Sum();
-Console.WriteLine("Enter a number");
+Console.WriteLine("Enter 2 numbers");
 int a = Convert.ToInt32(Console.ReadLine());
 int b = Convert.ToInt32(Console.ReadLine());
 int sum = sum1.getSum(a, b);
-Console.WriteLine($"The sum is :{sum}");  
+Console.WriteLine($"The sum is :{sum}");
 Console.ReadLine();*/
 
 //Question 2:
@@ -18,7 +19,7 @@ Console.Write("Enter the rate of interest (in %): ");
 double rate = Convert.ToDouble(Console.ReadLine());
 Console.Write("Enter the time (in years): ");
 double time = Convert.ToDouble(Console.ReadLine());
-double si  = simpleIntrest.getSimpleIntrest(principal , rate , time);
+double si = simpleIntrest.getSimpleIntrest(principal, rate, time);
 Console.WriteLine("The simple intrest is :{0}", si);
 Console.ReadLine();*/
 
@@ -108,8 +109,8 @@ int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter the symbol ");
 string? op = Console.ReadLine();
 int result = calculator.calculate(a, b, op);
-Console.WriteLine("The result is :{0}", result);
-*/
+Console.WriteLine("The result is :{0}", result);*/
+
 
 //Question:6
 /*string[] arr = { "Saugat", "Satish", "Madu", "Yubraj" };
@@ -189,4 +190,21 @@ for (int i = 0; i < 3; i++)
         Console.Write(array[i, j] + "\t");
     }
     Console.WriteLine();
-}*/
+}
+*/
+
+//Question : 10 
+
+Rectangle rect1 = new Rectangle { Length = 5, Breadth = 10 };
+Rectangle rect2 = new Rectangle { Length = 7, Breadth = 8 };
+
+rect1.ComputeArea();
+rect2.ComputeArea();
+
+Console.WriteLine("Rectangle 1:");
+rect1.DisplayArea();
+
+Console.WriteLine("Rectangle 2:");
+rect2.DisplayArea();
+
+Console.WriteLine("Larger Area: " + (rect1.Area > rect2.Area ? rect1.Area : rect2.Area));
