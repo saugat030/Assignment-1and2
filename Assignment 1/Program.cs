@@ -1,4 +1,5 @@
 ﻿using Assignment_1;
+using System;
 using System.ComponentModel;
 //using System.Drawing;
 
@@ -194,7 +195,7 @@ for (int i = 0; i < 3; i++)
 */
 
 //Question : 10 
-
+/*
 Rectangle rect1 = new Rectangle { Length = 5, Breadth = 10 };
 Rectangle rect2 = new Rectangle { Length = 7, Breadth = 8 };
 
@@ -207,4 +208,244 @@ rect1.DisplayArea();
 Console.WriteLine("Rectangle 2:");
 rect2.DisplayArea();
 
-Console.WriteLine("Larger Area: " + (rect1.Area > rect2.Area ? rect1.Area : rect2.Area));
+Console.WriteLine("Larger Area: " + (rect1.Area > rect2.Area ? rect1.Area : rect2.Area));*/
+
+/*-----------------------------------------------Assignment_2----------------------------------------------------------*/
+
+/*Question1*/
+
+/*delegate int FactorialDelegate(int n);
+class Program
+{ 
+    static void Main()
+    {
+        FactorialDelegate fact = n =>
+        {
+            int result = 1;
+            for (int i = 1; i <= n; i++) result *= i;
+            return result;
+        };
+        Console.WriteLine("Factorial: " + fact(6));
+    }
+}
+*/
+//Question 2:
+/*delegate void ProgressEventHandler(int progress);
+class ProgressNotifier
+{
+    public event ProgressEventHandler? ProgressChanged;
+    public void Iterate()
+    {
+        for (int i = 1; i <= 10000; i++)
+        {
+            if (i % 5 == 0)
+            {
+                ProgressChanged?.Invoke((i * 100) / 10000);
+            }
+        }
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        ProgressNotifier notifier = new ProgressNotifier();
+        notifier.ProgressChanged += progress => Console.WriteLine($"Progress: {progress}%");
+        notifier.Iterate();
+    }
+}*/
+
+//Question 3:
+/*class Quad
+{
+    public double a, b, c, r1, r2;
+
+    public void GetInput()
+    {
+        Console.Write("Enter a: ");
+        a = double.Parse(Console.ReadLine());
+        Console.Write("Enter b: ");
+        b = double.Parse(Console.ReadLine());
+        Console.Write("Enter c: ");
+        c = double.Parse(Console.ReadLine());
+    }
+
+    public double[] CalcRoots()
+    {
+        double disc = b * b - 4 * a * c;
+        if (disc >= 0)
+        {
+            r1 = (-b + Math.Sqrt(disc)) / (2 * a);
+            r2 = (-b - Math.Sqrt(disc)) / (2 * a);
+        }
+        else
+        {
+            r1 = r2 = double.NaN;
+        }
+        return new double[] { r1, r2 };
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Quad q = new Quad();
+        q.GetInput();
+        double[] roots = q.CalcRoots();
+        if (double.IsNaN(roots[0]) || double.IsNaN(roots[1]))
+            Console.WriteLine("Complex roots");
+        else
+            Console.WriteLine($"Roots: r1 = {roots[0]}, r2 = {roots[1]}");
+    }
+}*/
+
+//Question 4:
+/*class Student
+{
+    public int age;
+    public string name;
+
+    public void Input()
+    {
+        Console.Write("Enter age: ");
+        age = int.Parse(Console.ReadLine());
+        Console.Write("Enter name: ");
+        name = Console.ReadLine();
+    }
+}
+
+class Imain
+{
+    static void Main()
+    {
+        Student[] lstStudent = new Student[5];
+
+        for (int i = 0; i < 5; i++)
+        {
+            lstStudent[i] = new Student();
+            lstStudent[i].Input();
+        }
+
+        Console.WriteLine("Students with age >= 24:");
+        for (int i = 0; i < 5; i++)
+        {
+            if (lstStudent[i].age >= 24)
+                Console.WriteLine($"Name: {lstStudent[i].name}, Age: {lstStudent[i].age}");
+        }
+    }
+}
+*/
+//Question 5:
+/*class Time
+{
+    public int hr, min, sec;
+
+    public Time Sum(Time t1, Time t2)
+    {
+        Time result = new Time();
+        result.sec = t1.sec + t2.sec;
+        result.min = t1.min + t2.min + result.sec / 60;
+        result.sec %= 60;
+        result.hr = t1.hr + t2.hr + result.min / 60;
+        result.min %= 60;
+        return result;
+    }
+}
+
+class TimeDemo
+{
+    static void Main()
+    {
+        Time t1 = new Time { hr = 5, min = 40, sec = 40 };
+        Time t2 = new Time { hr = 4, min = 40, sec = 50 };
+
+        Time t3 = new Time();
+        t3 = t3.Sum(t1, t2);
+
+        Console.WriteLine($"t1 --> {t1.hr}:{t1.min}:{t1.sec}");
+        Console.WriteLine($"t2 --> {t2.hr}:{t2.min}:{t2.sec}");
+        Console.WriteLine($"Total Sum t3 --> {t3.hr}:{t3.min}:{t3.sec}");
+    }
+}
+*/
+
+//Question 6
+/*using System.IO;
+
+class FileCopy
+{
+    static void Main()
+    {
+        string inputPath = "input.txt";
+        string outputPath = "output.txt";
+
+        try
+        {
+            string content = File.ReadAllText(inputPath);
+
+            File.WriteAllText(outputPath, content);
+
+            Console.WriteLine("File content copied successfully.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+    }
+}*/
+
+//Question 7:
+/*class FileRead
+{
+    static void Main()
+    {
+        string inputPath = "input.txt";
+
+        try
+        {
+            string[] lines = File.ReadAllLines(inputPath);
+            Console.WriteLine("Words ending with 'g':");
+            foreach (string line in lines)
+            {
+                string[] words = line.Split(' ');
+                foreach (string word in words)
+                {
+                    if (word.EndsWith("g", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine(word);
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+    }
+}*/
+
+//Question 8:
+/*public interface ICalc
+{
+    int Add(int x, int y);
+    int Diff(int x, int y);
+}
+
+public class Calc : ICalc
+{
+    public int Add(int x, int y) => x + y;
+    public int Diff(int x, int y) => x - y;
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        ICalc calc = new Calc();
+        Console.WriteLine(calc.Add(5, 3));
+        Console.WriteLine(calc.Diff(5, 3));
+    }
+}
+*/
+//Question 9:
