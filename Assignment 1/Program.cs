@@ -449,3 +449,159 @@ public class Program
 }
 */
 //Question 9:
+/*public interface Shape
+{
+    void Get();
+    void Display();
+}
+
+public class Rectangle : Shape
+{
+    int l, b;
+
+    public void Get()
+    {
+        Console.Write("Enter length: ");
+        l = int.Parse(Console.ReadLine());
+        Console.Write("Enter breadth: ");
+        b = int.Parse(Console.ReadLine());  
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"Rectangle Area: {l * b}");
+    }
+}
+
+public class Square : Shape
+{
+    int s;
+
+    public void Get()
+    {
+        Console.Write("Enter side: ");
+        s = int.Parse(Console.ReadLine());
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"Square Area: {s * s}");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Shape rect = new Rectangle();
+        Shape sqr = new Square();
+
+        Console.WriteLine("Rectangle:");
+        rect.Get();
+        rect.Display();
+
+        Console.WriteLine("Square:");
+        sqr.Get();
+        sqr.Display();
+    }
+}
+*/
+
+/*public abstract class Vehicle
+{
+    public abstract void StartEngine();
+    public void StopEngine() => Console.WriteLine("Engine stopped.");
+}
+
+public class Airplane : Vehicle
+{
+    public string Model { get; set; }
+    public string Manufacturer { get; set; }
+    public int MaxCapacity { get; set; }
+
+    public Airplane(string model, string manufacturer, int maxCapacity)
+    {
+        Model = model;
+        Manufacturer = manufacturer;
+        MaxCapacity = maxCapacity;
+    }
+
+    public override void StartEngine() => Console.WriteLine("Airplane engine started. Performing pre-flight checks...");
+
+    public void TakeOff() => Console.WriteLine("Airplane is taking off.");
+    public void Land() => Console.WriteLine("Airplane is landing.");
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Airplane airplane = new Airplane("Boeing 747", "Boeing", 416);
+
+        Console.WriteLine($"Model: {airplane.Model}");
+        Console.WriteLine($"Manufacturer: {airplane.Manufacturer}");
+        Console.WriteLine($"Max Capacity: {airplane.MaxCapacity}");
+
+        airplane.StartEngine();
+        airplane.TakeOff();
+        airplane.Land();
+        airplane.StopEngine();
+    }
+}*/
+//Question 11
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public string Address { get; set; }
+    public decimal Salary { get; set; }
+}
+
+public class Imain
+{
+    public static void Main()
+    {
+        List<Employee> employees = new List<Employee>
+        {
+            new Employee { ID = 1, Name = "Alice", Address = "New York", Salary = 50000 },
+            new Employee { ID = 2, Name = "Bob", Address = "Chicago", Salary = 30000 },
+            new Employee { ID = 3, Name = "Charlie", Address = "Los Angeles", Salary = 45000 },
+            new Employee { ID = 4, Name = "Diana", Address = "Miami", Salary = 20000 }
+        };
+
+        var highEarners = employees.Where(e => e.Salary > 40000);
+
+        foreach (var emp in highEarners)
+        {
+            Console.WriteLine($"ID: {emp.ID}, Name: {emp.Name}, Address: {emp.Address}, Salary: {emp.Salary}");
+        }
+    }
+}*/
+/*Qno12*/
+/*using System;
+using System.Linq;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int[] arr = new int[n];
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = int.Parse(Console.ReadLine());
+        }
+
+        int sumOfOdds = arr.Where(x => x % 2 != 0).Sum();
+
+        Console.WriteLine($"Sum of odd numbers: {sumOfOdds}");
+    }
+}
+*/
