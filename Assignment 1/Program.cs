@@ -376,9 +376,10 @@ class TimeDemo
 class FileCopy
 {
     static void Main()
-    {
-        string inputPath = "input.txt";
-        string outputPath = "output.txt";
+    {   //Esma afno file ko path hala.
+
+        string inputPath = "C:\\Users\\ZuluMumu\\Desktop\\C# assignments\\Assignment 1\\Assignment 1\\bin\\Debug\\net7.0\\input.txt";
+        string outputPath = "C:\\Users\\ZuluMumu\\Desktop\\C# assignments\\Assignment 1\\Assignment 1\\bin\\Debug\\net7.0\\output.txt";
 
         try
         {
@@ -400,7 +401,8 @@ class FileCopy
 {
     static void Main()
     {
-        string inputPath = "input.txt";
+        //Esma afno file ko path halnu
+        string inputPath = "C:\\Users\\ZuluMumu\\Desktop\\C# assignments\\Assignment 1\\Assignment 1\\bin\\Debug\\net7.0\\input.txt";
 
         try
         {
@@ -464,7 +466,7 @@ public class Rectangle : Shape
         Console.Write("Enter length: ");
         l = int.Parse(Console.ReadLine());
         Console.Write("Enter breadth: ");
-        b = int.Parse(Console.ReadLine());  
+        b = int.Parse(Console.ReadLine());
     }
 
     public void Display()
@@ -567,9 +569,9 @@ public class Imain
     {
         List<Employee> employees = new List<Employee>
         {
-            new Employee { ID = 1, Name = "Alice", Address = "New York", Salary = 50000 },
-            new Employee { ID = 2, Name = "Bob", Address = "Chicago", Salary = 30000 },
-            new Employee { ID = 3, Name = "Charlie", Address = "Los Angeles", Salary = 45000 },
+            new Employee { ID = 1, Name = "Saugat", Address = "Nepal", Salary = 50000 },
+            new Employee { ID = 2, Name = "Satish", Address = "India", Salary = 30000 },
+            new Employee { ID = 3, Name = "Ramesh", Address = "Itahari", Salary = 45000 },
             new Employee { ID = 4, Name = "Diana", Address = "Miami", Salary = 20000 }
         };
 
@@ -582,10 +584,7 @@ public class Imain
     }
 }*/
 /*Qno12*/
-/*using System;
-using System.Linq;
-
-public class Program
+/*public class Program
 {
     public static void Main()
     {
@@ -603,5 +602,4 @@ public class Program
 
         Console.WriteLine($"Sum of odd numbers: {sumOfOdds}");
     }
-}
-*/
+}*/
